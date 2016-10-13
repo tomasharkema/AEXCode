@@ -1,0 +1,24 @@
+PODS:
+  - Promissum (1.0.0):
+    - Promissum/Core (= 1.0.0)
+  - Promissum/Core (1.0.0)
+
+DEPENDENCIES:
+  - Promissum (from `https://github.com/tomlokhorst/Promissum.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  Promissum:
+    :branch: swift3
+    :git: https://github.com/tomlokhorst/Promissum.git
+
+CHECKOUT OPTIONS:
+  Promissum:
+    :commit: 2813ebc6fea2d1c689f1fe949fed1e3179757458
+    :git: https://github.com/tomlokhorst/Promissum.git
+
+SPEC CHECKSUMS:
+  Promissum: c92914ba10700dc40866f31d681288a036349c86
+
+PODFILE CHECKSUM: 35734824b7feabf6d71c3e741529e99ce79a8dc0
+
+COCOAPODS: 1.1.0.rc.2

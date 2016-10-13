@@ -1,0 +1,6 @@
+framework module Pods_AEXCodeTests {
+  umbrella header "Pods-AEXCodeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
