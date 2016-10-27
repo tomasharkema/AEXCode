@@ -11,9 +11,11 @@ import Promissum
 
 final class ViewController: NSViewController {
   
+  @IBOutlet weak var contentView: NSView!
+  
   private let parser = CodeParser()
   
-  private let containerView = NSView()
+  private var canvasSize: CGSize?
   
   override func viewWillAppear() {
     super.viewWillAppear()
@@ -35,18 +37,18 @@ final class ViewController: NSViewController {
     
     let rect = CGRect(
       origin: view.frame.origin,
-      size: CGSize(width: CGFloat(env.configuration.width) / scale, height: CGFloat(env.configuration.height) / scale)
+      size: CGSize(width: CGFloat(env.configuration.width), height: CGFloat(env.configuration.height)).downscale(initialScale: scale)
     )
     
-    view.window?.setFrame(rect, display: true)
-    view.window?.minSize = rect.size
+    view.window?.setContentSize(rect.size)
     view.window?.maxSize = rect.size
+    view.window?.minSize = rect.size
+    view.window?.makeKeyAndOrderFront(nil)
     
     // Layers
     
-    containerView.frame = rect
-    view.addSubview(containerView)
-    containerView.layer?.backgroundColor = NSColor.black.cgColor
+    view.addSubview(contentView)
+    contentView.layer?.backgroundColor = NSColor.black.cgColor
     
     env.layers.forEach {
       self.renderLayer(layer: $0)
@@ -60,13 +62,14 @@ final class ViewController: NSViewController {
     let newLayer = CALayer()
     newLayer.frame = CGRect(
       x: CGFloat(layer.x) / scale,
-      y: view.frame.height - CGFloat(layer.y) / scale,
+      y: view.frame.height - (CGFloat(layer.y) / scale) - (CGFloat(layer.height) / scale),
       width: CGFloat(layer.width) / scale,
       height: CGFloat(layer.height) / scale
     )
     
     newLayer.backgroundColor = NSColor.white.cgColor
-    containerView.layer?.addSublayer(newLayer)
+    contentView.layer?.addSublayer(newLayer)
   }
 }
+
 

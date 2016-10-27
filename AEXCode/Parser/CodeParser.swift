@@ -38,6 +38,7 @@ enum ParseError: Error {
   case propertyOfWrongType(object: String, propertyName: String, expected: String, actual: String)
   case propertyMissing(object: String, propertyName: String)
   case valueMissing(name: String)
+  case multiple([ParseError])
   case wrongType(actual: String, expected: String)
   case unknownError(String)
 }
@@ -107,7 +108,9 @@ final class CodeParser {
     }
     
     guard errors.isEmpty else {
-      return .error(.valueMissing(name: "configuration"))
+      return .error(.multiple(errors.map { error in
+        error.error!
+      }))
     }
     
     return .result(layers.map { $0.value! })
@@ -136,7 +139,7 @@ final class CodeParser {
       
       let layersResult = self.parseLayers(context: context)
       guard case .result(let layers) = layersResult else {
-        promiseSource.reject(confResult.error!)
+        promiseSource.reject(layersResult.error!)
         return
       }
       

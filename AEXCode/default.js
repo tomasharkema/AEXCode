@@ -5,20 +5,26 @@ configuration = {
 }
 
 var layer1 = new Layer({
-                       "x": 500,
-                       "y": 500,
-                       "width": 150,
-                       "height": 150,
-                       "backgroundColor": WHITE
+  "x": 500,
+  "y": 500,
+  "width": 150,
+  "height": 150,
+  "backgroundColor": WHITE
 })
 
 var layer2 = new Layer({
-                       "x": 100,
-                       "y": 100,
-                       "width": 100,
-                       "height": 100,
-                       "backgroundColor": WHITE
-                       })
+  "x": 100,
+  "y": 100,
+  "width": 100,
+  "height": 100,
+  "backgroundColor": WHITE
+})
 
+var backgroundSolid = new Layer({
+  "x": 200,
+  "y": 200,
+  "width": 100,
+  "height": 100
+})
 
-layers = [layer1, layer2]
+layers = [backgroundSolid, layer1, layer2]

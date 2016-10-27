@@ -14,7 +14,7 @@ import JavaScriptCore
   var y: NSNumber {get set}
   var width: NSNumber {get set}
   var height: NSNumber {get set}
-  var backgroundColor: String {get set}
+  var backgroundColor: String? {get set}
 }
 
 class AEXScriptClass {
@@ -24,9 +24,9 @@ class AEXScriptClass {
     dynamic var y: NSNumber
     dynamic var width: NSNumber
     dynamic var height: NSNumber
-    dynamic var backgroundColor: String
+    dynamic var backgroundColor: String?
     
-    init(x: NSNumber, y: NSNumber, width: NSNumber, height: NSNumber, backgroundColor: String) {
+    init(x: NSNumber, y: NSNumber, width: NSNumber, height: NSNumber, backgroundColor: String?) {
       self.x = x
       self.y = y
       self.width = width
@@ -47,15 +47,12 @@ class AEXScriptClass {
       guard let height = dict["height"] as? NSNumber else {
         return nil
       }
-      guard let backgroundColor = dict["backgroundColor"] as? String else {
-        return nil
-      }
       
       self.x = x
       self.y = y
       self.width = width
       self.height = height
-      self.backgroundColor = backgroundColor
+      self.backgroundColor = dict["backgroundColor"] as? String
     }
     
     func toLayer() -> Layer {
@@ -69,5 +66,5 @@ struct Layer {
   let y: Float
   let width: Float
   let height: Float
-  let backgroundColor: String
+  let backgroundColor: String?
 }

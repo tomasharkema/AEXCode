@@ -22,6 +22,7 @@
 		C3FE9EBC1DB010D400D67DB4 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE9EBB1DB010D400D67DB4 /* FileReader.swift */; };
 		C3FE9EBE1DB0113300D67DB4 /* aexscript.js in Resources */ = {isa = PBXBuildFile; fileRef = C3FE9EBD1DB0113300D67DB4 /* aexscript.js */; };
 		C3FE9EC11DB02F2100D67DB4 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE9EC01DB02F2100D67DB4 /* Layer.swift */; };
+		C3FE9EC41DB045FF00D67DB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE9EC31DB045FF00D67DB4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		C3FE9EBB1DB010D400D67DB4 /* FileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		C3FE9EBD1DB0113300D67DB4 /* aexscript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aexscript.js; sourceTree = "<group>"; };
 		C3FE9EC01DB02F2100D67DB4 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layer.swift; path = Parser/Objects/Layer.swift; sourceTree = "<group>"; };
+		C3FE9EC31DB045FF00D67DB4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
 		E59ED894E6ECA0ECBEC2667D /* Pods_AEXCodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEXCodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA214DCC49AE6567F34435BA /* Pods-AEXCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEXCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AEXCode/Pods-AEXCode.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 		C3FE9E821DAFF25400D67DB4 /* AEXCode */ = {
 			isa = PBXGroup;
 			children = (
+				C3FE9EC21DB045F000D67DB4 /* Utils */,
 				C3FE9EB41DAFF81000D67DB4 /* Parser */,
 				C3FE9EB01DAFF63700D67DB4 /* SFMono-Regular.otf */,
 				C3FE9E831DAFF25400D67DB4 /* AppDelegate.swift */,
@@ -194,6 +197,14 @@
 				C3FE9EC01DB02F2100D67DB4 /* Layer.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		C3FE9EC21DB045F000D67DB4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3FE9EC31DB045FF00D67DB4 /* Extensions.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3FE9EB61DAFF81B00D67DB4 /* CodeParser.swift in Sources */,
+				C3FE9EC41DB045FF00D67DB4 /* Extensions.swift in Sources */,
 				C3FE9E861DAFF25400D67DB4 /* ViewController.swift in Sources */,
 				C3FE9EC11DB02F2100D67DB4 /* Layer.swift in Sources */,
 				C3FE9EBC1DB010D400D67DB4 /* FileReader.swift in Sources */,
